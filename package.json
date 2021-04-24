@@ -1,5 +1,5 @@
 {
-  "name": "front-2",
+  "name": "chat-front-react-apollo-graphql",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
