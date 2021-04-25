@@ -1,6 +1,5 @@
 import { gql } from "@apollo/client";
 
-// Usado para obter todas as mensagens
 export const GET_MESSAGES = gql`
   query {
     messages {
@@ -12,7 +11,6 @@ export const GET_MESSAGES = gql`
   }
 `;
 
-// Usado para obter atualização de mensagens
 export const GET_NEW_MESSAGE = gql`
   subscription {
     newMessage {
@@ -25,11 +23,19 @@ export const GET_NEW_MESSAGE = gql`
   }
 `;
 
-// Usado para enviar novas mensagens
 export const CREATE_MESSAGE = gql`
   mutation($data: MessageInput!) {
     createMessage(data: $data) {
       content
+    }
+  }
+`;
+
+export const LOGIN = gql`
+  mutation($data: UserInput!) {
+    login(data: $data) {
+      nickname
+      _id
     }
   }
 `;
