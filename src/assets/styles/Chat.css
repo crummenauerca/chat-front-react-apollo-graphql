@@ -1,0 +1,57 @@
+.chat .messages {
+  padding: 5rem 1rem 3.5rem 1rem;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.chat form {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0;
+  border-top: solid 1px #20bf6b75;
+  background-image: linear-gradient(260deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+.chat button {
+  font-size: 1rem;
+  min-width: 10%;
+  height: 40px;
+  padding: 0 8px;
+  color: #fff;
+  border: solid 1px #20bf6b;
+  background-color: #20bf6b;
+  border-radius: 0 12px 12px 0;
+  border-left: 0;
+  transition: 0.25s;
+  font-weight: 400;
+}
+
+.chat button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.chat input {
+  font-size: 1rem;
+  min-width: 56%;
+  height: 40px;
+  outline: none;
+  padding: 8px;
+  border: solid 1px #20bf6b;
+  border-radius: 12px 0 0 12px;
+}
+
+.chat button:hover {
+  opacity: 0.8;
+}
+
+form {
+  margin: .5rem;
+}

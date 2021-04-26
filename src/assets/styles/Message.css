@@ -1,0 +1,11 @@
+.message {
+  background: transparent;
+}
+
+.message .other-user-info {
+  font-size: 0.75rem;
+  text-align: "center";
+  font-size: "11pt";
+  background-color: "white";
+  color: #009432;
+}

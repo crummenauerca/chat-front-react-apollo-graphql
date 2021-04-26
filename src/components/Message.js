@@ -1,41 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import "../assets/styles/Message.css";
 
 const Message = ({ message, user }) => {
   const { author, content } = message;
 
+  useEffect(() => {
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+
   return (
     <div
+      className="message"
       style={{
         display: "flex",
         justifyContent: user.nickname === message.author.nickname ? "flex-end" : "flex-start",
-        paddingBottom: ".5rem",
+        paddingBottom: ".25rem",
       }}
     >
-      {user.nickname !== author.nickname && (
-        <div
-          style={{
-            height: 50,
-            width: 50,
-            marginRight: "0.5rem",
-            border: "2px solid #e5e6ea",
-            borderRadius: 100,
-            textAlign: "center",
-            fontSize: "18pt",
-            paddingTop: 5,
-          }}
-        >
-          {author.nickname.slice(0, 2).toUpperCase()}
-        </div>
-      )}
       <div
         style={{
-          background: user.nickname === author.nickname ? "blue" : "#e5e6ea",
+          background: user.nickname === author.nickname ? "#20bf6b" : "#fff",
           color: user.nickname === author.nickname ? "white" : "black",
           padding: ".5rem",
-          borderRadius: "1rem",
-          maxWidth: "75%",
+          borderRadius: "12px",
+          maxWidth: "80%",
         }}
       >
+        {user.nickname !== author.nickname && (
+          <div className="other-user-info">
+            <span>{author.nickname}</span>
+          </div>
+        )}
         {content}
       </div>
     </div>

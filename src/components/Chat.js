@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
-import { Container, Row, Col, FormInput, Button } from "shards-react";
 import { GET_MESSAGES, CREATE_MESSAGE } from "../graphql/channels";
+
+import "../assets/styles/Chat.css";
 import Message from "./Message";
 
 const Chat = ({ user }) => {
@@ -9,7 +10,8 @@ const Chat = ({ user }) => {
 
   const [createMessage] = useMutation(CREATE_MESSAGE);
 
-  const onSend = () => {
+  const onSubmit = event => {
+    event.preventDefault();
     if (content.length > 0) {
       createMessage({
         variables: {
@@ -30,41 +32,17 @@ const Chat = ({ user }) => {
   }
 
   return (
-    <Container
-      style={{
-        padding: "5rem",
-      }}
-    >
-      {data.messages.map((message, index) => (
-        <Message message={message} user={user} key={index} />
-      ))}
-
-      <Row
-        style={{
-          position: "fixed",
-          bottom: 0,
-          padding: 10,
-          width: "80%",
-        }}
-      >
-        <Col xs={9}>
-          <FormInput
-            value={content}
-            onChange={evt => setContent(evt.target.value)}
-            onKeyUp={evt => {
-              if (evt.keyCode === 13) {
-                onSend();
-              }
-            }}
-          />
-        </Col>
-        <Col xs={3} style={{ padding: 0 }}>
-          <Button onClick={() => onSend()} style={{ width: "100%" }}>
-            Enviar
-          </Button>
-        </Col>
-      </Row>
-    </Container>
+    <div className="chat">
+      <div className="messages">
+        {data.messages.map((message, index) => (
+          <Message message={message} user={user} key={index} />
+        ))}
+      </div>
+      <form onSubmit={onSubmit}>
+        <input value={content} type="text" onChange={event => setContent(event.target.value)} />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   );
 };
 

@@ -6,6 +6,8 @@ import { useMutation } from "@apollo/client";
 import { LOGIN } from "../graphql/channels";
 import Header from "./Header";
 
+import logo from "../assets/images/logo.png";
+
 const Auth = () => {
   const [nicknameInput, setNicknameInput] = useState("");
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("@simple-chat/user")));
@@ -42,10 +44,15 @@ const Auth = () => {
   } else {
     return (
       <div className="auth">
-        <h3>Simple Chat</h3>
-        <p>Insira um nickname para conversar :)</p>
+        <img src={logo} alt="Logo do Simple Chat" />
+        <h1>Simple Chat</h1>
         <form onSubmit={handleSubmit}>
-          <input type="text" value={nicknameInput} onChange={event => setNicknameInput(event.target.value)} />
+          <input
+            placeholder="Seu nickname"
+            type="text"
+            value={nicknameInput}
+            onChange={event => setNicknameInput(event.target.value)}
+          />
           <button type="submit">Acessar</button>
         </form>
       </div>

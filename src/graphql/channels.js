@@ -15,7 +15,6 @@ export const GET_NEW_MESSAGE = gql`
   subscription {
     newMessage {
       content
-      createdAt
       author {
         nickname
       }

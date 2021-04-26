@@ -7,29 +7,32 @@
 }
 
 .auth button {
+  font-size: 1rem;
   height: 40px;
   padding: 0 8px;
   color: #fff;
   border: solid 1px #27ae60;
   background-color: #27ae60;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 12px 12px 0;
   border-left: 0;
   transition: 0.25s;
 }
 
 .auth button:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .auth input {
+  font-size: 1rem;
   height: 40px;
   outline: none;
   padding: 8px;
   border: solid 1px #27ae60;
-  border-radius: 8px 0 0 8px;
-  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px 0 0 12px;
 }
 
-p, h3, form {
-  margin: .5rem;
+h1 {
+  color: #333;
+  font-weight: 400;
 }
