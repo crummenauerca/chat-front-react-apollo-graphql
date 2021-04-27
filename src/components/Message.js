@@ -25,6 +25,7 @@ const Message = ({ message, user }) => {
           padding: ".5rem",
           borderRadius: "12px",
           maxWidth: "80%",
+          wordBreak: "break-word",
         }}
       >
         {user.nickname !== author.nickname && (

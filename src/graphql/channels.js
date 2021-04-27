@@ -4,6 +4,7 @@ export const GET_MESSAGES = gql`
   query {
     messages {
       content
+      createdAt
       author {
         nickname
       }
@@ -15,6 +16,7 @@ export const GET_NEW_MESSAGE = gql`
   subscription {
     newMessage {
       content
+      createdAt
       author {
         nickname
       }

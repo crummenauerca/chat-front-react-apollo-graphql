@@ -29,7 +29,7 @@ const Header = ({ nickname }) => {
       <img src={logo} alt="Logo do Simple Chat" />
       {data && (
         <span className="users-status">
-          {data.userStatusChanged.nickname}
+          {data.userStatusChanged.nickname === nickname ? "Você" : data.userStatusChanged.nickname}
           <br />
           {data.userStatusChanged.isActive === true ? "entrou 😃" : "saiu 😥"}
         </span>
