@@ -6,6 +6,24 @@
   justify-content: center;
 }
 
+.auth h1 {
+  color: #333;
+  font-weight: 400;
+}
+
+.auth form {
+  margin: .5rem;
+}
+
+.auth input {
+  font-size: 1rem;
+  height: 40px;
+  outline: none;
+  padding: 8px;
+  border: solid 1px #27ae60;
+  border-radius: 12px 0 0 12px;
+}
+
 .auth button {
   font-size: 1rem;
   height: 40px;
@@ -21,18 +39,4 @@
 .auth button:hover {
   opacity: 0.8;
   cursor: pointer;
-}
-
-.auth input {
-  font-size: 1rem;
-  height: 40px;
-  outline: none;
-  padding: 8px;
-  border: solid 1px #27ae60;
-  border-radius: 12px 0 0 12px;
-}
-
-h1 {
-  color: #333;
-  font-weight: 400;
 }

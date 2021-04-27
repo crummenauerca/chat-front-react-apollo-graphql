@@ -38,3 +38,20 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const LOGOUT = gql`
+  mutation($data: UserInput!) {
+    logout(data: $data) {
+      nickname
+    }
+  }
+`;
+
+export const USER_STATUS_CHANGED = gql`
+  subscription {
+    userStatusChanged {
+      nickname
+      isActive
+    }
+  }
+`;

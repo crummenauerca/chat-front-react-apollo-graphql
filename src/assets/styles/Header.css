@@ -23,6 +23,7 @@
   border-radius: 8px;
   border-left: 0;
   transition: 0.25s;
+  border: solid 1px #20bf6b;
 }
 
 .header button:hover {
@@ -30,10 +31,16 @@
   cursor: pointer;
 }
 
-header img {
+.header img {
   height: 3.4rem;
 }
 
-header span {
+.header .users-status {
   color: #222;
+  font-weight: 400;
+  text-align: center;
+  background-color: #fff;
+  padding: .4rem;
+  border: solid 2px #20bf6b;
+  border-radius: 12px;
 }

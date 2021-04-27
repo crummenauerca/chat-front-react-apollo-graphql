@@ -21,7 +21,7 @@
 
 .chat button {
   font-size: 1rem;
-  min-width: 10%;
+  min-width: 20%;
   height: 40px;
   padding: 0 8px;
   color: #fff;
@@ -40,7 +40,7 @@
 
 .chat input {
   font-size: 1rem;
-  min-width: 56%;
+  min-width: 50%;
   height: 40px;
   outline: none;
   padding: 8px;
@@ -52,6 +52,11 @@
   opacity: 0.8;
 }
 
-form {
-  margin: .5rem;
+.error {
+  color: red;
+  height: 96vh;
+  display: flex;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
 }
