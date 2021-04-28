@@ -24,3 +24,39 @@ body {
   background-image: linear-gradient(260deg, #d4fc79 0%, #96e6a1 100%);
   background-attachment: fixed;
 }
+
+@media(max-width: 3840px) {
+  html {
+    font-size: 160%;
+  }
+}
+
+@media(max-width: 2560px) {
+  html {
+    font-size: 145%;
+  }
+}
+
+@media(max-width: 1920px) {
+  html {
+    font-size: 130%;
+  }
+}
+
+@media(max-width: 1280px) {
+  html {
+    font-size: 115%;
+  }
+}
+
+@media(max-width: 960px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media(max-width: 540px) {
+  html {
+    font-size: 85%;
+  }
+}
