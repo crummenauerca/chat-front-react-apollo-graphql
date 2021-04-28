@@ -4,9 +4,9 @@ import Chat from "./Chat";
 
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../graphql/channels";
-import Header from "./Header";
 
 import logo from "../assets/images/logo.png";
+import Header from "../components/Header";
 
 const Auth = () => {
   const [nicknameInput, setNicknameInput] = useState("");
@@ -51,7 +51,13 @@ const Auth = () => {
             placeholder="Seu nickname"
             type="text"
             value={nicknameInput}
-            onChange={event => setNicknameInput(event.target.value)}
+            onChange={event => {
+              if (event.target.value.length <= 10) {
+                setNicknameInput(event.target.value);
+              } else {
+                alert("Máximo de 10 caracteres para o nickname!");
+              }
+            }}
           />
           <button type="submit">Acessar</button>
         </form>

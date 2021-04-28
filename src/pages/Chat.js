@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useQuery, useMutation, useSubscription } from "@apollo/client";
 import { GET_MESSAGES, CREATE_MESSAGE, GET_NEW_MESSAGE } from "../graphql/channels";
 
-import Message from "./Message";
-import Loading from "./Loading";
+import Message from "../components/Message";
+import Loading from "../components/Loading";
 import "../assets/styles/Chat.css";
-import newMessageSound from "../assets/sounds/newMessage.mp3";
+import showNotification from "../utils/Notification";
 
 const Chat = ({ user }) => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const Chat = ({ user }) => {
       newMessages.push(newMessage);
       setMessages(newMessages);
       if (user.nickname !== newMessage.author.nickname) {
-        new Audio(newMessageSound).play();
+        showNotification();
       }
     }
   }

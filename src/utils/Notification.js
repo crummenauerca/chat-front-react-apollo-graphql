@@ -8,12 +8,12 @@ export default function showNotification(title, body, type) {
   switch (type) {
     case "online": {
       sound = userOnlineSound;
-      body = `${body} está on-line :)`;
+      body = `${body} está on-line 😃`;
       break;
     }
     case "offline": {
       sound = userOfflineSound;
-      body = `${body} está off-line :(`;
+      body = `${body} está off-line 😥`;
       break;
     }
     default: {
@@ -22,10 +22,22 @@ export default function showNotification(title, body, type) {
   }
 
   new Audio(sound).play();
+
+  if (sound === newMessageSound) {
+    return;
+  }
+
   if (Notification.permission === "granted") {
+    // Para evitar notificações repetidas diante de várias abas abertas da aplicação
+    if (localStorage.getItem("@simple-chat/lastNotification") === title + body + type) {
+      return;
+    }
+
     new Notification(`Simple chat | ${title}`, {
       body,
       icon: logo,
     }).onclick = () => window.focus();
+
+    localStorage.setItem("@simple-chat/lastNotification", title + body + type);
   }
 }

@@ -1,7 +1,7 @@
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./graphql/connection";
 
-import Auth from "./components/Auth";
+import Auth from "./pages/Auth";
 
 function App() {
   return (
